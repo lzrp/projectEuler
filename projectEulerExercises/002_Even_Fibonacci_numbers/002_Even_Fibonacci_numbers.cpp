@@ -13,7 +13,7 @@ int main()
 	auto upperLimit = 4000000;
 	int a = 0, b = 1,c, sum = 0;
 
-	cout << "Fibonacci numbers whose values do not exceed four million: " << endl;
+	cout << "Sum of even Fibonacci numbers whose values do not exceed four million: " << endl;
 
 	while (b < upperLimit )
 	{
