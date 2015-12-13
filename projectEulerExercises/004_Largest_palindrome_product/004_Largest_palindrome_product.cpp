@@ -30,9 +30,14 @@ void GetLargestPalindrome()
 
 	for (size_t i = 999; i >= 100; i--)
 	{	
-		for (size_t j = 999; j >= 100; j--)
+		for (size_t j = i; j >= 100; j--)
 		{
 			long number = i * j;
+
+			if (number <= maxPalindrome)
+			{
+				break;
+			}
 
 			if (IsPalindrome(number) && number > maxPalindrome)
 			{
