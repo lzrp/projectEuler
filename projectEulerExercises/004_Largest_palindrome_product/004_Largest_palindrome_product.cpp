@@ -28,9 +28,9 @@ void GetLargestPalindrome()
 {
 	int maxPalindrome = 0;
 
-	for (size_t i = 999; i != 0; i--)
+	for (size_t i = 999; i >= 100; i--)
 	{	
-		for (size_t j = 999; j != 0; j--)
+		for (size_t j = 999; j >= 100; j--)
 		{
 			long number = i * j;
 
