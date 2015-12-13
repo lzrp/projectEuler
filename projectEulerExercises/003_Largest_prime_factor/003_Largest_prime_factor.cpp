@@ -9,7 +9,7 @@ using namespace std;
 
 //Completed 13/12/2015
 
-list<int> GetPrimeNumbers(int upperLimit)
+list<int> GeneratePrimeNumbers(int upperLimit)
 {
 	int a = 2;
 	list<int> primeNumbers;
@@ -36,7 +36,7 @@ list<int> GetPrimeNumbers(int upperLimit)
 list<int> GetPrimeFactors(long long number)
 {
 	list<int> primeFactors;
-	list<int> primeNumbers = GetPrimeNumbers(2000);
+	list<int> primeNumbers = GeneratePrimeNumbers(2000);
 
 	for (list<int>::iterator iterator = primeNumbers.begin(); iterator != primeNumbers.end(); ++iterator)
 	{
