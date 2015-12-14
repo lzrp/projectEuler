@@ -17,7 +17,7 @@ int main()
 	std::cout << "Smallest positive number that is evenly divisible by all numbers from 1 to 20: " << std::endl;
 
 	bool isFound = false;
-	int i = 10;
+	int i = 20;
 	int smallestMultiple = 0;
 
 	while (!isFound)
@@ -40,7 +40,7 @@ int main()
 			smallestMultiple = i;
 		}
 
-		i += 10;
+		i += 20;
 		isFound = isEvenlyDivisible;
 	}
 
