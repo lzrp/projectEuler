@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "stdlib.h"
 #include <iostream>
+#include <time.h>    
+#include <iomanip>  
 
 // Completed 14/12/2015
 
@@ -14,6 +16,9 @@ bool IsDivisible(long long dividend, int divisor)
 
 int main()
 {
+	clock_t clockBegin, clockEnd;
+	clockBegin = clock();
+
 	std::cout << "Smallest positive number that is evenly divisible by all numbers from 1 to 20: " << std::endl;
 
 	bool isFound = false;
@@ -24,7 +29,7 @@ int main()
 	{
 		bool isEvenlyDivisible = false;
 
-		for (size_t j = 1; j <= 20; j++)
+		for (size_t j = 11; j <= 20; j++)
 		{
 			if (!IsDivisible(i, j))
 			{
@@ -38,6 +43,7 @@ int main()
 		if (isEvenlyDivisible)
 		{
 			smallestMultiple = i;
+			break;
 		}
 
 		i += 20;
@@ -45,6 +51,11 @@ int main()
 	}
 
 	std::cout << smallestMultiple << std::endl;
+
+	clockEnd = clock();
+
+	
+	std::cout << "total seconds elapsed: " << std::setprecision(4) << double(clockEnd - clockBegin) / CLOCKS_PER_SEC << std::endl;
 
     return 0;
 }
@@ -67,4 +78,4 @@ int main()
 //N = N * p[i] ^ a[i]
 //i = i + 1
 //end while
-//output N
+//output N
