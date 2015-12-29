@@ -6,12 +6,49 @@
 #include <iostream>
 #include <time.h>    
 #include <iomanip>  
+#include "Timer.h"
 
 // Completed 14/12/2015
 
 bool IsDivisible(long long dividend, int divisor)
 {
 	return !(dividend % divisor);
+}
+
+void FunctionWrapper()
+{
+    std::cout << "Smallest positive number that is evenly divisible by all numbers from 1 to 20: " << std::endl;
+
+    bool isFound = false;
+    int i = 20;
+    int smallestMultiple = 0;
+
+    while (!isFound)
+    {
+        bool isEvenlyDivisible = false;
+
+        for (size_t j = 11; j <= 20; j++)
+        {
+            if (!IsDivisible(i, j))
+            {
+                isEvenlyDivisible = false;
+                break;
+            }
+
+            isEvenlyDivisible = true;
+        }
+
+        if (isEvenlyDivisible)
+        {
+            smallestMultiple = i;
+            break;
+        }
+
+        i += 20;
+        isFound = isEvenlyDivisible;
+    }
+
+    std::cout << smallestMultiple << std::endl;
 }
 
 int main()
@@ -56,6 +93,10 @@ int main()
 
 	
 	std::cout << "total seconds elapsed: " << std::setprecision(4) << double(clockEnd - clockBegin) / CLOCKS_PER_SEC << std::endl;
+
+
+    std::cout << "TimerClockLib test: " << std::endl;
+    Timer::PrintFunctionRunningTime(&FunctionWrapper);
 
     return 0;
 }
